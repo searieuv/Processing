@@ -1,6 +1,6 @@
 //playing around with circles, ellipses, and squares
 boolean squares = true;
-int colored_shape_probability = 20;
+int colored_shape_probability = 2;
 
 void setup () {
   background(127);
@@ -24,14 +24,19 @@ void run() {
     alphaRand = (int) random(256);
     if (choose < colored_shape_probability){
       //noFill();
-      fill(255,255,255,alphaRand);
-      stroke(0,0,0,alphaRand);
+      fill(127,255,127,alphaRand);
+      //stroke(0,0,0,alphaRand);
+      noStroke();
       ellipse(x,y,180 + sizeRand,240 + sizeRand);
     } else {
       if (x >= 250 && x <= 750 && y >= 250 && y <= 750) {
-        fill(127,0,0,alphaRand);
+        //fill(127,0,0,alphaRand);
+        noFill();
+        stroke(127,0,0,alphaRand);
       } else {
-        fill(0,0,0,alphaRand);
+        //fill(0,0,0,alphaRand);
+        noFill();
+        stroke(127,0,0,alphaRand);
       }
       if (squares == false) {
         ellipse(x,y,40 + sizeRand,40 + sizeRand);
