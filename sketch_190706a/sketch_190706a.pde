@@ -1,9 +1,10 @@
 //playing around with circles, ellipses, and squares
 boolean squares = true;
 int colored_shape_probability = 2;
+int sample_count = 0;
 
 void setup () {
-  background(127);
+  background(255);
   size(1000,1000);
 }
 
@@ -16,6 +17,11 @@ void draw() {
 void run() {
   int[] x_loc = {50, 150, 250, 350, 450, 550, 650, 750, 850, 950};
   int x,y,choose,sizeRand,alphaRand;
+  if (keyPressed) {
+    sample_count++;
+    String filename = "sample" + sample_count + ".png";
+    save(filename);
+  }
   if (mousePressed){
     y = (int) random(1000);
     x = x_loc[(int) random(10)];
